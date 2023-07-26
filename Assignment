@@ -1,0 +1,359 @@
+interface MusicalInstrument {
+    void play();
+}
+
+// Interface for Medical Instruments
+interface MedicalInstrument {
+    void operate();
+}
+
+// Interface for String-Based Musical Instruments
+interface StringBasedMusicalInstrument extends MusicalInstrument {
+    void tuneStrings();
+}
+
+// Interface for Air-Based Musical Instruments
+interface AirBasedMusicalInstrument extends MusicalInstrument {
+    void blowAir();
+}
+
+// Interface for Surgical Instruments
+interface SurgicalInstrument extends MedicalInstrument {
+    boolean sterile();
+}
+
+// Interface for Pathological Instruments
+interface PathologicalInstrument extends MedicalInstrument {
+    void reader();
+}
+
+// Musical Instruments
+class Guitar implements StringBasedMusicalInstrument {
+    @Override
+    public void play() {
+        System.out.println("Playing the Guitar");
+    }
+
+    @Override
+    public void tuneStrings() {
+        System.out.println("Tuning the Guitar strings");
+    }
+
+    void pluck() {
+        System.out.println("Plucking the Guitar strings");
+    }
+}
+
+class Violin implements StringBasedMusicalInstrument {
+    @Override
+    public void play() {
+        System.out.println("Playing the Violin");
+    }
+
+    @Override
+    public void tuneStrings() {
+        System.out.println("Tuning the Violin strings");
+    }
+
+    void bowing() {
+        System.out.println("Bowing the Violin strings");
+    }
+}
+
+class Flute implements AirBasedMusicalInstrument {
+    @Override
+    public void play() {
+        System.out.println("Playing the Flute");
+    }
+
+    @Override
+    public void blowAir() {
+        System.out.println("Blowing air into the Flute");
+    }
+}
+
+class Harmonium implements AirBasedMusicalInstrument {
+    @Override
+    public void play() {
+        System.out.println("Playing the Harmonium");
+    }
+
+    @Override
+    public void blowAir() {
+        System.out.println("Pumping air into the Harmonium");
+    }
+}
+
+// Medical Instruments
+class SurgicalCutter implements SurgicalInstrument {
+    @Override
+    public void operate() {
+        System.out.println("Using the Surgical Cutter");
+    }
+
+    @Override
+    public boolean sterile() {
+        return true; // Assuming the surgical cutter is sterile
+    }
+}
+
+class SurgicalNeedle implements SurgicalInstrument {
+    @Override
+    public void operate() {
+        System.out.println("Using the Surgical Needle");
+    }
+
+    @Override
+    public boolean sterile() {
+        return true; // Assuming the surgical needle is sterile
+    }
+}
+
+// Pathological Instruments
+class Glucometer implements PathologicalInstrument {
+    @Override
+    public void operate() {
+        System.out.println("Using the Glucometer");
+    }
+
+    @Override
+    public void reader() {
+        System.out.println("Reading Glucose level");
+    }
+}
+
+class ECGMachine implements PathologicalInstrument {
+    @Override
+    public void operate() {
+        System.out.println("Using the ECG Machine");
+    }
+
+    @Override
+    public void reader() {
+        System.out.println("Reading ECG data");
+    }
+}
+
+public class InstrumentDemo {
+    public static void main(String[] args) {
+        // Musical Instruments
+        Guitar guitar = new Guitar();
+        Violin violin = new Violin();
+        Flute flute = new Flute();
+        Harmonium harmonium = new Harmonium();
+
+        System.out.println("=== Musical Instruments ===");
+        guitar.play();
+        guitar.tuneStrings();
+        guitar.pluck();
+
+        violin.play();
+        violin.tuneStrings();
+        violin.bowing();
+
+        flute.play();
+        flute.blowAir();
+
+        harmonium.play();
+        harmonium.blowAir();
+
+        // Medical Instruments
+        SurgicalCutter cutter = new SurgicalCutter();
+        SurgicalNeedle needle = new SurgicalNeedle();
+        Glucometer glucometer = new Glucometer();
+        ECGMachine ecgMachine = new ECGMachine();
+
+        System.out.println("=== Medical Instruments ===");
+        cutter.operate();
+        System.out.println("Is the surgical cutter sterile? " + cutter.sterile());
+
+        needle.operate();
+        System.out.println("Is the surgical needle sterile? " + needle.sterile());
+
+        glucometer.operate();
+        glucometer.reader();
+
+        ecgMachine.operate();
+        ecgMachine.reader();
+    }
+}
+// Interface for Musical Instruments
+interface MusicalInstrument {
+    void play();
+}
+
+// Interface for Medical Instruments
+interface MedicalInstrument {
+    void operate();
+}
+
+// Interface for String-Based Musical Instruments
+interface StringBasedMusicalInstrument extends MusicalInstrument {
+    void tuneStrings();
+}
+
+// Interface for Air-Based Musical Instruments
+interface AirBasedMusicalInstrument extends MusicalInstrument {
+    void blowAir();
+}
+
+// Interface for Surgical Instruments
+interface SurgicalInstrument extends MedicalInstrument {
+    boolean sterile();
+}
+
+// Interface for Pathological Instruments
+interface PathologicalInstrument extends MedicalInstrument {
+    void reader();
+}
+
+// Musical Instruments
+class Guitar implements StringBasedMusicalInstrument {
+    @Override
+    public void play() {
+        System.out.println("Playing the Guitar");
+    }
+
+    @Override
+    public void tuneStrings() {
+        System.out.println("Tuning the Guitar strings");
+    }
+
+    void pluck() {
+        System.out.println("Plucking the Guitar strings");
+    }
+}
+
+class Violin implements StringBasedMusicalInstrument {
+    @Override
+    public void play() {
+        System.out.println("Playing the Violin");
+    }
+
+    @Override
+    public void tuneStrings() {
+        System.out.println("Tuning the Violin strings");
+    }
+
+    void bowing() {
+        System.out.println("Bowing the Violin strings");
+    }
+}
+
+class Flute implements AirBasedMusicalInstrument {
+    @Override
+    public void play() {
+        System.out.println("Playing the Flute");
+    }
+
+    @Override
+    public void blowAir() {
+        System.out.println("Blowing air into the Flute");
+    }
+}
+
+class Harmonium implements AirBasedMusicalInstrument {
+    @Override
+    public void play() {
+        System.out.println("Playing the Harmonium");
+    }
+
+    @Override
+    public void blowAir() {
+        System.out.println("Pumping air into the Harmonium");
+    }
+}
+
+// Medical Instruments
+class SurgicalCutter implements SurgicalInstrument {
+    @Override
+    public void operate() {
+        System.out.println("Using the Surgical Cutter");
+    }
+
+    @Override
+    public boolean sterile() {
+        return true; // Assuming the surgical cutter is sterile
+    }
+}
+
+class SurgicalNeedle implements SurgicalInstrument {
+    @Override
+    public void operate() {
+        System.out.println("Using the Surgical Needle");
+    }
+
+    @Override
+    public boolean sterile() {
+        return true; // Assuming the surgical needle is sterile
+    }
+}
+
+// Pathological Instruments
+class Glucometer implements PathologicalInstrument {
+    @Override
+    public void operate() {
+        System.out.println("Using the Glucometer");
+    }
+
+    @Override
+    public void reader() {
+        System.out.println("Reading Glucose level");
+    }
+}
+
+class ECGMachine implements PathologicalInstrument {
+    @Override
+    public void operate() {
+        System.out.println("Using the ECG Machine");
+    }
+
+    @Override
+    public void reader() {
+        System.out.println("Reading ECG data");
+    }
+}
+
+public class InstrumentDemo {
+    public static void main(String[] args) {
+        // Musical Instruments
+        Guitar guitar = new Guitar();
+        Violin violin = new Violin();
+        Flute flute = new Flute();
+        Harmonium harmonium = new Harmonium();
+
+        System.out.println("=== Musical Instruments ===");
+        guitar.play();
+        guitar.tuneStrings();
+        guitar.pluck();
+
+        violin.play();
+        violin.tuneStrings();
+        violin.bowing();
+
+        flute.play();
+        flute.blowAir();
+
+        harmonium.play();
+        harmonium.blowAir();
+
+        // Medical Instruments
+        SurgicalCutter cutter = new SurgicalCutter();
+        SurgicalNeedle needle = new SurgicalNeedle();
+        Glucometer glucometer = new Glucometer();
+        ECGMachine ecgMachine = new ECGMachine();
+
+        System.out.println("=== Medical Instruments ===");
+        cutter.operate();
+        System.out.println("Is the surgical cutter sterile? " + cutter.sterile());
+
+        needle.operate();
+        System.out.println("Is the surgical needle sterile? " + needle.sterile());
+
+        glucometer.operate();
+        glucometer.reader();
+
+        ecgMachine.operate();
+        ecgMachine.reader();
+    }
+}
