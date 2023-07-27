@@ -71,6 +71,9 @@ class Car
 		if(value>=0.20) {
 			Licence=true;
 		}
+		if(value>=0.50) {
+			FuelLevel=0;
+		}
 		if(keyFound==true) {
 			System.out.println("Car is started....");
 			
